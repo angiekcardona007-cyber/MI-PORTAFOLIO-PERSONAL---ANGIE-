@@ -1,0 +1,120 @@
+/* === RESETEO BÁSICO === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === ESTILOS GENERALES === */
+body, html {
+  height: 100%;
+  overflow: hidden; /* Ocultamos scroll externo, solo se usará el carrusel */
+  font-family: Arial, sans-serif;
+  background: #222; /* Fondo base */
+  color: white;
+}
+
+/* === CONTENEDOR DEL CARRUSEL === */
+.carrusel-container {
+  display: flex; /* Las páginas se colocan una al lado de la otra */
+  width: 400vw; /* 4 páginas → 400% del ancho de la ventana */
+  height: 100vh;
+  transition: transform 0.6s ease-in-out; /* Animación al mover */
+}
+
+/* === PÁGINAS === */
+.pagina {
+  width: 100vw;   /* Cada página ocupa todo el ancho de la pantalla */
+  height: 100vh;  /* Y todo el alto */
+  flex-shrink: 0; /* Evita que se encojan */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Contenido desde arriba */
+  align-items: center;
+  padding: 40px 20px;
+  overflow-y: auto; /* Permite scroll interno en cada página si hay mucho contenido */
+}
+
+/* Colores de fondo diferentes para cada sección */
+.pagina1 { background-color: #555; }
+.pagina2 { background-color: #2e2e2e; }
+.pagina3 { background-color: #999; color: #000; }
+.pagina4 { background-color: #bbb; color: #000; }
+
+/* === TEXTOS GENERALES === */
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* === GRID DE PROYECTOS === */
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se adapta a pantallas */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Cada tarjeta de proyecto */
+.proyecto {
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+/* Título del proyecto */
+.proyecto h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+/* Imagen del proyecto */
+.proyecto img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Texto de descripción */
+.proyecto p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* === BOTONES DE NAVEGACIÓN === */
+.botones {
+  position: fixed; /* Siempre visibles */
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  z-index: 1000; /* Encima de todo */
+}
+
+.boton {
+  padding: 12px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.boton:hover {
+  bac

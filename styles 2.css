@@ -1,0 +1,101 @@
+/* ---------- ESTILOS GENERALES ---------- */
+body {
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  padding: 0; /* Elimina el relleno por defecto */
+  background-color: #888; /* Fondo gris para toda la página */
+  font-family: Arial, sans-serif; /* Fuente predeterminada */
+  display: flex; /* Usa flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.contenedor {
+  width: 700px; /* Ancho fijo del currículum */
+  background-color: #444; /* Fondo gris oscuro para contraste */
+  padding: 40px 20px; /* Espacio interno (arriba-abajo, lados) */
+  margin: 40px 20px; /* Espacio externo (separa de los bordes de la ventana) */
+  position: relative; /* Posición relativa (por si se añaden elementos absolutos después) */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+/* ---------- FOTO DE PERFIL ---------- */
+.foto-perfil {
+  display: block; /* Se comporta como bloque, permitiendo márgenes */
+  margin: 0 auto 30px auto; /* Centra horizontalmente + separación abajo */
+  max-width: 200px; /* Ancho máximo de la foto */
+  border: 5px solid black; /* Borde negro alrededor de la foto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* ---------- TÍTULOS (SECCIONES) ---------- */
+h2 {
+  font-family: 'Bebas Neue', sans-serif; /* Fuente especial para títulos */
+  font-size: 26px; /* Tamaño de letra */
+  color: #fff; /* Color blanco */
+  margin-bottom: 10px; /* Espacio debajo del título */
+  border-bottom: 1px solid #bbb; /* Línea decorativa debajo */
+  padding-bottom: 5px; /* Espacio interno entre el texto y la línea */
+}
+
+/* ---------- PÁRRAFOS Y LISTAS ---------- */
+p, li {
+  font-size: 15px; /* Tamaño de letra estándar */
+  line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+  color: #fff; /* Texto blanco */
+}
+
+/* ---------- LISTAS ---------- */
+ul {
+  padding-left: 20px; /* Sangría a la izquierda para los ítems */
+  margin-top: 5px; /* Espacio encima de la lista */
+  text-align: left; /* Alinea los elementos de lista a la izquierda */
+}
+
+/* ---------- SUBTÍTULOS (ejemplo: habilidades) ---------- */
+.subtitulo {
+  font-weight: bold; /* Texto en negrita */
+  margin-top: 20px; /* Espacio superior */
+  color: #fff; /* Texto blanco */
+}
+
+/* ---------- SECCIÓN DE BOTONES EN FORMA DE ESFERA ---------- */
+.esferas {
+  display: flex; /* Flexbox para alinear botones */
+  justify-content: center; /* Centra los botones en el eje horizontal */
+  gap: 40px; /* Espacio entre las esferas */
+  margin-top: 50px; /* Espacio superior respecto al contenido anterior */
+}
+
+.esfera {
+  width: 100px; /* Ancho del círculo */
+  height: 100px; /* Alto del círculo */
+  border-radius: 50%; /* Lo convierte en círculo */
+  display: flex; /* Flexbox para centrar el texto dentro */
+  align-items: center; /* Centra verticalmente el texto */
+  justify-content: center; /* Centra horizontalmente el texto */
+  font-family: 'Bebas Neue', sans-serif; /* Fuente especial */
+  font-size: 16px; /* Tamaño de letra */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  transition: transform 0.3s; /* Efecto suave para animaciones (hover) */
+}
+
+/* Efecto al pasar el cursor por encima de una esfera */
+.esfera:hover {
+  transform: scale(1.1); /* Agranda la esfera un 10% */
+}
+
+/* ---------- VARIANTES DE ESFERAS ---------- */
+.portafolio {
+  background-color: #222; /* Esfera de color negro/gris oscuro */
+}
+
+.proyectos {
+  background-color: #fff; /* Esfera blanca */
+  color: #000; /* Texto negro dentro */
+  border: 2px solid #000; /* Borde negro */
+}
+
+.regresar {
+  background-color: #999; /* Esfera gris */
+}
