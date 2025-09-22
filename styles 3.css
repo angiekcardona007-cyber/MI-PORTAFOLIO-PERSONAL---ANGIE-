@@ -1,120 +1,117 @@
-/* === RESETEO BÁSICO === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* --- Reset general --- */
+* { 
+  margin: 0;              /* Elimina márgenes por defecto */
+  padding: 0;             /* Elimina padding por defecto */
+  box-sizing: border-box; /* Incluye padding y borde en el cálculo del ancho/alto */
 }
 
-/* === ESTILOS GENERALES === */
+/* --- Configuración básica de la página --- */
 body, html {
-  height: 100%;
-  overflow: hidden; /* Ocultamos scroll externo, solo se usará el carrusel */
-  font-family: Arial, sans-serif;
-  background: #222; /* Fondo base */
-  color: white;
+  height: 100%;                /* La página ocupa toda la altura de la pantalla */
+  overflow: hidden;            /* Oculta scroll general (solo se verá en secciones internas) */
+  font-family: Arial, sans-serif; /* Fuente por defecto */
+  background: #222;            /* Fondo oscuro general */
 }
 
-/* === CONTENEDOR DEL CARRUSEL === */
+/* --- Contenedor del carrusel (todas las páginas en fila) --- */
 .carrusel-container {
-  display: flex; /* Las páginas se colocan una al lado de la otra */
-  width: 400vw; /* 4 páginas → 400% del ancho de la ventana */
-  height: 100vh;
-  transition: transform 0.6s ease-in-out; /* Animación al mover */
+  display: flex;                     /* Organiza las páginas en fila */
+  width: 400vw;                      /* 4 páginas = 4 * 100vw */
+  transition: transform 0.6s ease-in-out; /* Animación suave al moverse */
 }
 
-/* === PÁGINAS === */
+/* --- Cada página del carrusel --- */
 .pagina {
-  width: 100vw;   /* Cada página ocupa todo el ancho de la pantalla */
-  height: 100vh;  /* Y todo el alto */
-  flex-shrink: 0; /* Evita que se encojan */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Contenido desde arriba */
-  align-items: center;
-  padding: 40px 20px;
-  overflow-y: auto; /* Permite scroll interno en cada página si hay mucho contenido */
+  width: 100vw;              /* Cada página ocupa toda la pantalla en ancho */
+  height: 100vh;             /* Cada página ocupa toda la pantalla en alto */
+  flex-shrink: 0;            /* No se reduce el tamaño */
+  display: flex;             /* Flexbox para centrar contenido */
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  flex-direction: column;    /* Apila título, texto e imágenes */
+  position: relative;        /* Para posicionar elementos internos */
 }
 
-/* Colores de fondo diferentes para cada sección */
+/* --- Colores de fondo diferentes para cada página --- */
 .pagina1 { background-color: #555; }
 .pagina2 { background-color: #2e2e2e; }
-.pagina3 { background-color: #999; color: #000; }
-.pagina4 { background-color: #bbb; color: #000; }
+.pagina3 { background-color: #999; }
+.pagina4 { background-color: #bbb; }
 
-/* === TEXTOS GENERALES === */
+/* --- Estilo de los títulos --- */
 h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   margin-bottom: 10px;
-  text-align: center;
+  color: white; /* Texto en blanco para contraste */
 }
 
+/* --- Estilo de los párrafos --- */
 p {
   font-size: 1.2em;
-  margin-bottom: 20px;
-  text-align: center;
+  letter-spacing: 1px; /* Espaciado entre letras */
+  color: white;
 }
 
-/* === GRID DE PROYECTOS === */
+/* --- Contenedor de botones del carrusel --- */
+.botones {
+  position: absolute;      /* Se ubica flotando en la pantalla */
+  bottom: 20px;            /* 20px desde abajo */
+  width: 100%;             /* Ocupa todo el ancho */
+  display: flex;           /* Organiza los botones en fila */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 10px;               /* Espacio entre botones */
+}
+
+/* --- Botones individuales --- */
+.boton {
+  padding: 10px 20px;
+  background: black;       /* Fondo negro */
+  color: white;            /* Texto blanco */
+  border: none;            /* Sin borde */
+  cursor: pointer;         /* Cambia el cursor al pasar encima */
+  font-size: 1em;
+  border-radius: 5px;      /* Bordes redondeados */
+  transition: background 0.3s; /* Animación al pasar el mouse */
+}
+
+/* --- Efecto hover de los botones --- */
+.boton:hover {
+  background: #444;        /* Cambia a gris más claro */
+}
+
+/* --- Contenedor de proyectos en forma de grilla --- */
 .proyectos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se adapta a pantallas */
-  gap: 30px;
+  display: grid;                            /* Organiza en grilla */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Crea columnas adaptables (mínimo 280px, máximo flexible) */
+  gap: 30px;                                /* Espacio entre tarjetas */
+  padding: 60px;                            /* Separación interna */
   width: 100%;
-  max-width: 1200px;
-  padding: 20px;
+  max-height: calc(100vh - 160px);          /* Se ajusta al alto de pantalla */
+  overflow-y: auto;                         /* Permite scroll vertical interno */
 }
 
-/* Cada tarjeta de proyecto */
+/* --- Cada tarjeta de proyecto --- */
 .proyecto {
-  text-align: center;
-  background: rgba(0,0,0,0.3);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  text-align: center;  /* Centra el contenido */
+  color: white;
 }
 
-/* Título del proyecto */
+/* --- Títulos de proyectos --- */
 .proyecto h3 {
   margin-bottom: 10px;
-  font-size: 1.4em;
 }
 
-/* Imagen del proyecto */
+/* --- Imagenes dentro de proyectos --- */
 .proyecto img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  width: 100%;                   /* Ocupa todo el ancho de la tarjeta */
+  max-width: 400px;              /* No sobrepasa 400px */
+  border-radius: 10px;           /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra alrededor */
 }
 
-/* Texto de descripción */
+/* --- Descripción de cada proyecto --- */
 .proyecto p {
   font-size: 0.9em;
-  line-height: 1.4;
+  margin-top: 8px;
 }
-
-/* === BOTONES DE NAVEGACIÓN === */
-.botones {
-  position: fixed; /* Siempre visibles */
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  z-index: 1000; /* Encima de todo */
-}
-
-.boton {
-  padding: 12px 20px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.boton:hover {
-  bac

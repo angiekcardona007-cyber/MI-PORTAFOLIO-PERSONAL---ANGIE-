@@ -1,42 +1,53 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Angie Cardona | Carrusel Portafolio</title>
+  <!-- Define que la página está en español y que usará codificación UTF-8 (permite tildes, ñ, etc.) -->
 
-  <!-- Enlace al archivo de estilos CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Hace que el diseño sea responsive, adaptándose a celulares, tablets y pantallas grandes -->
+
+  <title>Angie Cardona | Carrusel Portafolio</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
   <link rel="stylesheet" href="styles 3.css">
+  <!-- Enlace al archivo CSS externo que contiene los estilos -->
 </head>
+
 <body>
-  <!-- Contenedor general del carrusel -->
+  <!-- CONTENEDOR PRINCIPAL DEL CARRUSEL -->
   <div class="carrusel-container" id="carrusel">
 
-    <!-- Página 1: Portada del portafolio -->
+    <!-- PÁGINA 1 -->
     <section class="pagina pagina1">
       <h1>PORTAFOLIO</h1>
       <p>MIS PROYECTOS</p>
     </section>
 
-    <!-- Página 2: Proyectos personales -->
+    <!-- PÁGINA 2 -->
     <section class="pagina pagina2">
       <h1>PROYECTO 1</h1>
       <p>TRABAJOS PERSONALES</p>
 
-      <!-- Grid con los proyectos de esta sección -->
+      <!-- GRID DE PROYECTOS -->
       <div class="proyectos-grid">
+
+        <!-- Proyecto 1 -->
         <div class="proyecto">
           <h3>REVISTA</h3>
+          <!-- Imagen del proyecto -->
           <img src="https://lh3.googleusercontent.com/pw/AP1GczNq3CLoskx8Xl2G3VXtn5ftUVkITYGaoatd9_BaNlTJ9_vgVmkmUJxpV8hHin7fMhNFHEJZvo2YPvNVtRfzelcnQVjD_NCEgo_MEgbSWd8mYwUw0Ojhu7NTqrWgrsZukckFAd0dAhF_uqp1f-2RuPvX9Q=w1080-h1830-s-no-gm?authuser=0">
           <p>Este proyecto fue creado con la intención de hacer un regalo creativo para una amiga.</p>
         </div>
 
+        <!-- Proyecto 2 -->
         <div class="proyecto">
           <h3>LIENZOS DE ANGIE</h3>
           <img src="https://lh3.googleusercontent.com/pw/AP1GczNFYZSspQVSmkXwdo9qWyPfCoHFVjgWvwtW4QAtNVEDkBy9QuifMrjjY8ySKZYWgdCGXZa8IpD8_XQ8eNFIEHBTLwmDGXylKYrogGV3tHiVyy2EqZhow_jx6fASKCXOQpYQJnPFWZFyKkQsrJXbqr1XVw=w1046-h1358-s-no-gm?authuser=0">
           <p>Estas son algunas de las muchas pinturas que he hecho a lo largo de mi vida, como hobby.</p>
         </div>
 
+        <!-- Proyecto 3 -->
         <div class="proyecto">
           <h3>LIENZOS DE ANGIE</h3>
           <img src="https://lh3.googleusercontent.com/pw/AP1GczMEbR-V6daKiRNdfrnkELNCzfKYNeRRTJRIf4PugHCISt_vcCfU_ygcJx5bBSSePLuZPVXe_zyndqpImXY0YST0WRjtlUvOL4Xi5Ni6lhau3G4EC7ACEnlOOGj41-N8mX4_rXXLYJqruvIp30jN4L3jsQ=w893-h1164-s-no-gm?authuser=0">
@@ -45,12 +56,13 @@
       </div>
     </section>
 
-    <!-- Página 3: Proyectos académicos de la técnica -->
+    <!-- PÁGINA 3 -->
     <section class="pagina pagina3">
       <h1>PROYECTO 2</h1>
       <p>PROYECTOS DE LA TÉCNICA</p>
 
       <div class="proyectos-grid">
+        <!-- Cada bloque representa un proyecto con título, imagen y descripción -->
         <div class="proyecto">
           <h3>REDISEÑO DE KAULA</h3>
           <img src="https://lh3.googleusercontent.com/pw/AP1GczP6FcKNviuZlrBp4q-QiukY0leiEhsThQr5FWyC8ckddG4wRZeKgPfCZAAuFXzHPzWUQ8WF__JdJ_GoTbO-a-xshlu-ZTI1sp70YnG-_wd5jUNAznlO_fhfJXugzKAWAllwk5C5ZH-mSwZYfEGTOez0sw=w1080-h798-s-no-gm?authuser=0">
@@ -83,7 +95,7 @@
       </div>
     </section>
 
-    <!-- Página 4: Proyectos individuales -->
+    <!-- PÁGINA 4 -->
     <section class="pagina pagina4">
       <h1>PROYECTO 3</h1>
       <p>PROYECTOS INDIVIDUALES</p>
@@ -104,25 +116,34 @@
     </section>
   </div>
 
-  <!-- Botones de navegación del carrusel -->
+  <!-- BOTONES DE NAVEGACIÓN DEL CARRUSEL -->
   <div class="botones">
     <button class="boton" onclick="cambiarPagina(-1)">⟵</button>
+    <!-- Botón para retroceder página -->
+
     <button class="boton" onclick="cambiarPagina(1)">⟶</button>
+    <!-- Botón para avanzar página -->
   </div>
 
-  <!-- Script para manejar el carrusel -->
+  <!-- SCRIPT PARA HACER FUNCIONAL EL CARRUSEL -->
   <script>
-    let paginaActual = 0; // Página en la que empieza el carrusel
+    let paginaActual = 0; 
+    // Variable que guarda el índice de la página en la que estamos
 
     function cambiarPagina(direccion) {
-      const totalPaginas = document.querySelectorAll(".pagina").length; // Número total de páginas
-      paginaActual += direccion; // Cambia de página según la dirección
+      const totalPaginas = document.querySelectorAll(".pagina").length;
+      // Cuenta cuántas páginas tiene el carrusel
 
-      // Control de límites (para que vuelva al inicio o al final)
+      paginaActual += direccion;
+      // Suma o resta según el botón presionado
+
       if (paginaActual < 0) paginaActual = totalPaginas - 1;
-      if (paginaActual >= totalPaginas) paginaActual = 0;
+      // Si retrocede desde la primera, va a la última
 
-      // Aplica la transformación al carrusel (mueve las páginas)
+      if (paginaActual >= totalPaginas) paginaActual = 0;
+      // Si avanza desde la última, vuelve a la primera
+
+      // Mueve el carrusel con translateX
       document.getElementById("carrusel").style.transform = `translateX(-${paginaActual * 100}vw)`;
     }
   </script>
